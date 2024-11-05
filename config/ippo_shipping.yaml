@@ -1,0 +1,47 @@
+# @package _global_
+
+defaults:
+  - override hydra/job_logging: disabled
+
+# Environment Configuration
+ENV_NAME: "shipping"
+ENV_KWARGS:
+  num_ports: 100
+  num_agents: 100
+  high_volume_ratio: 0.15
+  med_volume_ratio: 0.65
+  low_volume_ratio: 0.20
+  high_volume_containers: 500000
+  med_volume_containers: 50000
+  low_volume_containers: 5000
+  max_distance: 30
+  min_distance: 1
+  max_cargo: 10000
+  max_unloads_per_day: 2000
+  max_steps: 60
+
+# Training Configuration
+SEED: 42
+NUM_SEEDS: 1
+TOTAL_TIMESTEPS: 100000000
+NUM_ENVS: 32
+NUM_STEPS: 128
+NUM_MINIBATCHES: 4
+UPDATE_EPOCHS: 4
+GAMMA: 0.99
+GAE_LAMBDA: 0.95
+CLIP_EPS: 0.2
+ENT_COEF: 0.01
+VF_COEF: 0.5
+MAX_GRAD_NORM: 0.5
+LR: 0.0003
+ANNEAL_LR: true
+
+# Network Configuration
+ACTIVATION: "tanh"
+
+# Logging Configuration
+WANDB_MODE: "online"
+ENTITY: "petermorales"  # Your wandb entity
+PROJECT: "shipping-ippo"
+TUNE: false
