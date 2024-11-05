@@ -40,8 +40,8 @@ Key components:
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
-cd <repository-directory>
+git clone https://github.com/CodeMetalAI/logistics-jax.git
+cd logistics-jax
 ```
 
 ### 2. Install Dependencies
